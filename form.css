@@ -1,0 +1,120 @@
+.switchBtn{
+    padding: 20px;
+    justify-content: center;
+    text-align: center;
+}
+#btnSignUp,#btnLogIn{
+    width: 100px;
+    height: 30px;
+}
+#btnSignUp, #btnLogIn{
+    color: cornflowerblue;
+}
+#btnSignUp[disabled], #btnLogIn[disabled]{
+    color: darkgray;
+}
+.signUp_container,.login_container {
+    display: none !important;
+    padding-top: 10px;
+}
+.signUp_container.active,.login_container.active{
+     display: block !important;
+}
+.active{
+    background-color: lightblue;
+}
+#loginForm{
+    /* padding: 50px; */
+    justify-content: center;
+    text-align: center;
+}
+.inputEmail{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#email{
+    border-radius: 10px;
+    width: 250px;
+    height: 30px;
+    padding-left: 10px;
+}
+.inputPassword{
+    text-align: center;
+    margin-bottom: 20px;
+}
+#password {
+    width: 250px;
+    height: 30px;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+#btnLogin{
+    width: 100px;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    border: 0;
+    height: 25px;
+}
+#btnLogin[disabled]{
+    background-color: lightskyblue;    
+}
+input.invalid{
+    border: solid 2px red;
+}
+h1{
+    display: flex;
+    justify-content: center;
+    color:blueviolet;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.error.errorMessage{
+    display: block;
+    color: red;
+    font-size: large;
+}
+.errorMessage{
+    display: none;
+}
+
+body{
+    background-color: rgb(202, 248, 233);
+}
+.signUp_container {
+    justify-content: center;
+    text-align: center;
+    display: flex;
+}
+#registerForm {
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 20px;
+}
+form input{
+    width: 250px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+input {
+    display: block;
+    margin: 10px auto;
+    text-align: center;
+    padding: 0;
+}
+form#registerForm input.invalid{
+    border: 1px solid red;
+}
+#btnRegister {
+    width: 250px;
+    background-color: blueviolet;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    height: 30px;
+    padding: 0;
+}
+#btnRegister[disabled]{
+    background-color: lightsteelblue;    
+}

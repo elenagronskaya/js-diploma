@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <Link rel="stylesheet" href="form.css">
+</head>
+<body>
+    <div class="switchBtn">
+        <button id="btnSignUp" disabled="disabled">Sign Up</button>
+        <button id="btnLogIn" >Log In</button>
+    </div>
+    <div class="Form">
+        <div class="signUp_container active" id="signUpForm">
+            <h1>Sign Up, Please!</h1>
+            <form name="register" id="registerForm">
+                <input name="login" id="loginInput" placeholder="login">
+                <input name="name" id="nameInput" placeholder="name">
+                <input name="age" id="ageInput" placeholder="age">
+                <input name="email" id="emailInput" placeholder="email">
+                <input name="city" id="cityInput" placeholder="city">
+                <input name="password" id="passwordInput" placeholder="password">
+                <input name="passwordRepeat" id="passwordRepeatInput" placeholder="Repeat password">
+                <button id="btnRegister" disabled>Register</button>
+            </form>
+        </div>
+        <div class="login_container " id="logInForm">
+            <h1>Sign In</h1>
+            <form id="loginForm">
+                <div class="inputEmail">
+                    <input id="email" placeholder="email">
+                </div>
+                <div class="inputPassword">
+                    <input id="password" placeholder="password">
+                </div>
+                    <button id="btnLogin" disabled="disabled">Login</button>
+                <div>
+                    <span id="errorLoginForm"class="errorMessage">
+                        Вы ввели не верный пароль. Попробуйте снова.
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script type="module" src="form.js"></script>
+</body>
+</html>
