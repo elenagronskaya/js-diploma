@@ -1,7 +1,8 @@
 const regForm = document.getElementById("signUpForm");
 const logInForm = document.getElementById("logInForm");
 const btn = document.getElementById("btnRegister");
-const INVALID_CLASS = "invalid";
+const INVALID_CLASS = "invalid"; //comment for astrix
+
 let user = {} ;
 
 const formHelper = {
