@@ -2,7 +2,7 @@ const regForm = document.getElementById("signUpForm");
 const logInForm = document.getElementById("logInForm");
 const btn = document.getElementById("btnRegister");
 const INVALID_CLASS = "invalid";
-let user = {};
+let user = {} ;
 
 const formHelper = {
     login: {
