@@ -36,10 +36,10 @@ function findUser(email,password){
 function getErrorMessage(email){
     for (let i = 0; i < users.length; i++) {
         if(users[i].email.toLowerCase() === email.toLowerCase()){
-            return "Не верный пароль"
+            return "Пароль введен неверно"
         }
     };
-    return "Пользователь не зарегестрирован"
+    return "Пользователь не зарегистрирован"
 }
 
 btnLogin.addEventListener("click",function(event){
