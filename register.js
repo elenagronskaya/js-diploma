@@ -5,6 +5,14 @@ import { showLogInForm } from "./form.js"
 export function initRegistration(){
     const btn = document.getElementById("btnRegister");
     const regForm = document.getElementById("signUpForm");
+    function _isEmailExist(email){
+        for (let i = 0; i < users.length; i++){
+            if(users[i].email === email){
+                return true;
+            }
+        }
+        return false;
+    }
     const formHelper = {
         login: {
             value: "",
@@ -34,7 +42,7 @@ export function initRegistration(){
             valid: false,
             checkValidation(){
                 const regex = /^((?!\.)[\w-_.]*[^.])(@\w+)(\.\w+(\.\w+)?[^.\W])$/
-                this.email.valid = regex.test(this.email.value);   
+                this.email.valid = regex.test(this.email.value) && !_isEmailExist(this.email.value);   
             }
         },
         city: {
@@ -66,6 +74,7 @@ export function initRegistration(){
             }
             return true;
         },
+        
         getValue(){
             return {
                 login: this.login.value,
@@ -77,7 +86,7 @@ export function initRegistration(){
             }
         }
     };
-    
+
     regForm.addEventListener("input", (event) =>{
         const value = event.target.value;
         const name = event.target.name;
@@ -101,8 +110,6 @@ export function initRegistration(){
         users.push(formHelper.getValue());
         showLogInForm();
     });
-    
-
 
 return {
     regForm
