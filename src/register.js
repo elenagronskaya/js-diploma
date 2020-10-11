@@ -1,5 +1,5 @@
-import { INVALID_CLASS, users } from "./constants.js";
-import { showLogInForm } from "./form.js"
+import { INVALID_CLASS, users } from "./constants";
+import { showLogInForm } from "./index"
 
 //initLogin();
 export function initRegistration(){

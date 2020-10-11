@@ -1,4 +1,4 @@
-import { INVALID_CLASS, users } from "./constants.js";
+import { INVALID_CLASS, users } from "./constants";
 
 export function initLogin() {
 

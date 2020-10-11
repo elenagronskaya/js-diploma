@@ -1,6 +1,7 @@
 
-import {initRegistration} from "./register.js";
-import {initLogin} from "./login.js";
+import {initRegistration} from "./register";
+import {initLogin} from "./login";
+import "./assets/styles/form.scss"
 initLogin();
 const { regForm} = initRegistration();
 const logInForm = document.getElementById("logInForm");
