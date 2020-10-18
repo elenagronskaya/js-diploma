@@ -1,0 +1,25 @@
+.quantity{
+    display: flex;
+    padding: 30px;
+    font-size: large;
+    justify-content: space-around;
+}
+.header{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 0px;
+    text-align: center;
+    padding-top: 20px;
+}
+.row{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 50px 0px;
+    text-align: center;
+    padding-top: 20px;
+    background-color: floralwhite;
+}
+
+.active{
+    background-color: lightgray;
+}

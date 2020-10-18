@@ -1,4 +1,4 @@
-import { INVALID_CLASS, users } from "./constants";
+import * as Constants from "../constants";
 
 export function initLogin() {
 
@@ -6,14 +6,15 @@ const inputEmail = document.getElementById("email");
 const inputPassword = document.getElementById("password");
 const btnLogin = document.getElementById("btnLogin");
 const spanError = document.getElementById("errorLoginForm");
+const loginForm = document.getElementById("loginForm");
 
 function onInputHandler(event){
     spanError.classList.remove("error");
     const isValid = event.target.value  !==  "";
     if(isValid){
-        event.target.classList.remove(INVALID_CLASS)
+        event.target.classList.remove(Constants.INVALID_CLASS)
     }else{
-        event.target.classList.add(INVALID_CLASS);
+        event.target.classList.add(Constants.INVALID_CLASS);
     }
     if(inputEmail.value === "" || inputPassword.value === ""){
         btnLogin.setAttribute("disabled", "disabled")
@@ -26,16 +27,16 @@ inputEmail.addEventListener("input", onInputHandler);
 inputPassword.addEventListener("input", onInputHandler);
 
 function findUser(email,password){
-    for (let i = 0; i < users.length; i++) {
-        if(users[i].email.toLowerCase() === email.toLowerCase() && users[i].password.toLowerCase() === password.toLowerCase()) {
-            return users[i];
+    for (let i = 0; i < Constants.users.length; i++) {
+        if(Constants.users[i].email.toLowerCase() === email.toLowerCase() && Constants.users[i].password.toLowerCase() === password.toLowerCase()) {
+            return Constants.users[i];
         }
     };
    return null;
 }
 function getErrorMessage(email){
-    for (let i = 0; i < users.length; i++) {
-        if(users[i].email.toLowerCase() === email.toLowerCase()){
+    for (let i = 0; i < Constants.users.length; i++) {
+        if(Constants.users[i].email.toLowerCase() === email.toLowerCase()){
             return "Пароль введен неверно"
         }
     };
@@ -46,15 +47,17 @@ btnLogin.addEventListener("click",function(event){
     event.preventDefault();
     const user = findUser(inputEmail.value,inputPassword.value);
     if (user){
-        console.log(user);
-        const loginForm = document.getElementById("loginForm");
+        localStorage.setItem(Constants.USER_KEY, JSON.stringify({email: user.email, name: user.name}));
+        window.location.hash = "#/main";
         inputEmail.value = "";
         inputPassword.value = "";
+        window.location.hash = "#/main";
     }else{
         spanError.classList.add("error");
         spanError.innerText = getErrorMessage(inputEmail.value);
     }
 });
   return {
+      loginForm
   };
 }

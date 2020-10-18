@@ -1,13 +1,12 @@
-import { INVALID_CLASS, users } from "./constants";
-import { showLogInForm } from "./index"
+import * as Constants from "../constants";
 
 //initLogin();
 export function initRegistration(){
     const btn = document.getElementById("btnRegister");
     const regForm = document.getElementById("signUpForm");
     function _isEmailExist(email){
-        for (let i = 0; i < users.length; i++){
-            if(users[i].email === email){
+        for (let i = 0; i < Constants.users.length; i++){
+            if(Constants.users[i].email === email){
                 return true;
             }
         }
@@ -29,14 +28,14 @@ export function initRegistration(){
                 this.name.valid = this.name.value !==""
             }
         },
-        age: {
-            value: "",
-            valid: false,
-            checkValidation(){
-                const regex = /^\d+$/
-                this.age.valid = regex.test(this.age.value);
-            }
-        },
+        // age: {
+        //     value: "",
+        //     valid: false,
+        //     checkValidation(){
+        //         const regex = /^\d+$/
+        //         this.age.valid = regex.test(this.age.value);
+        //     }
+        // },
         email: {
             value: "",
             valid: false,
@@ -45,13 +44,13 @@ export function initRegistration(){
                 this.email.valid = regex.test(this.email.value) && !_isEmailExist(this.email.value);   
             }
         },
-        city: {
-            value: "",
-            valid: false,
-            checkValidation(){
-                this.city.valid = this.city.value !==""
-            }
-        },
+        // city: {
+        //     value: "",
+        //     valid: false,
+        //     checkValidation(){
+        //         this.city.valid = this.city.value !==""
+        //     }
+        // },
         password: {
             value: "",
             valid: false,
@@ -79,9 +78,9 @@ export function initRegistration(){
             return {
                 login: this.login.value,
                 name: this.name.value,
-                age: this.age.value,
+                // age: this.age.value,
                 email: this.email.value,
-                city: this.city.value,
+                // city: this.city.value,
                 password: this.password.value,    
             }
         }
@@ -99,19 +98,19 @@ export function initRegistration(){
     
     function handleClassAdding(domNode, isValid){
         if(isValid){
-            domNode.classList.remove(INVALID_CLASS);
+            domNode.classList.remove(Constants.INVALID_CLASS);
         }else{
-            domNode.classList.add(INVALID_CLASS)
+            domNode.classList.add(Constants.INVALID_CLASS)
         }
     }
     
     regForm.addEventListener("submit", (event) =>{
         event.preventDefault();
-        users.push(formHelper.getValue());
-        showLogInForm();
+        const cred = formHelper.getValue();
+        Constants.users.push(cred);
+        localStorage.setItem(Constants.USER_KEY, JSON.stringify({email: cred.email, name: cred.name}));
+        window.location.hash = Constants.ROUTE_MAIN;
     });
 
-return {
-    regForm
-    };
+return {regForm};
 }

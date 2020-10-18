@@ -16,3 +16,10 @@ export const users = [
         password: "3333"
     }
 ];
+export const ROOT_NODE = document.getElementById("add");
+export const USER_KEY = "currentUser";
+export const ROUTE_CLIENT = "#/clients";
+export const ROUTE_MAIN = "#/main";
+export const ROUTE_FORM = "#/form";
+export const ROUTE_CALENDAR = "#/calendar";
+// export const ROUTE_NOT_FOUND = "#/clients";
