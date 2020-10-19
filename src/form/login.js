@@ -48,10 +48,10 @@ btnLogin.addEventListener("click",function(event){
     const user = findUser(inputEmail.value,inputPassword.value);
     if (user){
         localStorage.setItem(Constants.USER_KEY, JSON.stringify({email: user.email, name: user.name}));
-        window.location.hash = "#/main";
         inputEmail.value = "";
         inputPassword.value = "";
-        window.location.hash = "#/main";
+        window.location.hash = Constants.ROUTE_MAIN;
+
     }else{
         spanError.classList.add("error");
         spanError.innerText = getErrorMessage(inputEmail.value);

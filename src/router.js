@@ -13,7 +13,7 @@ function router(){
         } else if (window.location.hash === Constants.ROUTE_MAIN || window.location.hash === "#/" || window.location.hash === ""){
             loginProtector(welcomInscription);
         } else  if (window.location.hash === Constants.ROUTE_CALENDAR){
-            Constants.ROOT_NODE.innerHTML = renderCalendar();
+            loginProtector(renderCalendar);
         }else{
             Constants.ROOT_NODE.innerHTML = `<div>Page is not found</div>`
         }  

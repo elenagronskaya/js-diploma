@@ -68,5 +68,5 @@ export function renderCalendar(){
             }
         }
     }
-    return calendar.body.innerHTML;
+    ROOT_NODE.innerHTML = calendar.body.innerHTML;
 }

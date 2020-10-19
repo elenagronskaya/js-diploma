@@ -16,7 +16,7 @@ export const users = [
         password: "3333"
     }
 ];
-export const ROOT_NODE = document.getElementById("add");
+export const ROOT_NODE = document.getElementById("page");
 export const USER_KEY = "currentUser";
 export const ROUTE_CLIENT = "#/clients";
 export const ROUTE_MAIN = "#/main";
