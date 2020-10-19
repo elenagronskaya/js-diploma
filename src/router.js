@@ -1,7 +1,8 @@
 import { initClients } from "./clients/clients"
 import * as Constants from "./constants";
 import { initForm } from "./form/form";
-import{ welcomInscription } from "./mainpage/mainpage"
+import{ getBrowser, welcomInscription } from "./mainpage/mainpage"
+import {renderCalendar} from "./calendar/calendar"
 
 
 function router(){
@@ -11,9 +12,11 @@ function router(){
             initForm();
         } else if (window.location.hash === Constants.ROUTE_MAIN || window.location.hash === "#/" || window.location.hash === ""){
             loginProtector(welcomInscription);
-        } else {
+        } else  if (window.location.hash === Constants.ROUTE_CALENDAR){
+            Constants.ROOT_NODE.innerHTML = renderCalendar();
+        }else{
             Constants.ROOT_NODE.innerHTML = `<div>Page is not found</div>`
-        }   
+        }  
     };
 
 export function initRouter(){ 

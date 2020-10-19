@@ -22,4 +22,3 @@ export const ROUTE_CLIENT = "#/clients";
 export const ROUTE_MAIN = "#/main";
 export const ROUTE_FORM = "#/form";
 export const ROUTE_CALENDAR = "#/calendar";
-// export const ROUTE_NOT_FOUND = "#/clients";
