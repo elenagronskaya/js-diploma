@@ -5,17 +5,25 @@
 .weekContainer, .days {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 50px 0px;
+    grid-template-rows: 50px;
     text-align: center;
-    padding-top: 20px;
     background-color: floralwhite;
-    border: solid 1px blue;
+    // border: solid 1px grey;
+    text-transform: uppercase;
+    font-family: cursive;
+    padding-bottom: 10px;
 }
 .currentDate {
     text-transform: uppercase;
     font-weight: 700;
     font-size: 13px;
     line-height: 11px;
-    padding: 0;
     margin: 30px auto;
+    font-family: cursive;
+    font-size: large;
+    color: blue;
+}
+.current{
+    background-color: blue;
+
 }

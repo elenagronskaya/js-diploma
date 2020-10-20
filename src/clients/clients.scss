@@ -3,6 +3,11 @@
     padding: 30px;
     font-size: large;
     justify-content: space-around;
+    .genderContainer, .balanceContainer{
+        font-size: large;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+    }
+    
 }
 .header{
     display: grid;
@@ -10,6 +15,9 @@
     grid-template-rows: 50px 0px;
     text-align: center;
     padding-top: 20px;
+    font-size: large;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-transform: uppercase;
 }
 .row{
     display: grid;
@@ -20,6 +28,6 @@
     background-color: floralwhite;
 }
 
-.active{
-    background-color: lightgray;
-}
+// .active{
+//     background-color: lightgray;
+// }

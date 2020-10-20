@@ -12,12 +12,12 @@ export function createUsersTab(users, showAmountsOnly){
         if(users[i].gender === "female"){
             genderFemaleAmount = genderFemaleAmount + 1
         };
-        if(users[i].balance > maxUsersBalance){
-           maxUsersBalance = users[i].balance
+        if(users[i].balance.toNumber() > maxUsersBalance){
+           maxUsersBalance = users[i].balance.toNumber()
         };
 
         if (!showAmountsOnly){
-            createUserRow(users[i], users);     
+            createUserRow(users[i], users);
         }
     }
 
@@ -26,9 +26,18 @@ export function createUsersTab(users, showAmountsOnly){
 
     const spanMaleAmount = document.getElementById("maleAmount");
     spanMaleAmount.innerText = genderMaleAmount;
-    
-    const spanBiggestBalance = document.getElementById("BiggestBalance");
-    spanBiggestBalance.innerText = maxUsersBalance;
 
+    const spanBiggestBalance = document.getElementById("BiggestBalance");
+    spanBiggestBalance.innerText = maxUsersBalance.toCurrency();
+
+}
+
+String.prototype.toNumber = function(){
+    return Number(this.replace(/[^0-9\.]+/g,""));
+}
+
+Number.prototype.toCurrency = function(){
+ const options = { style: "currency", currency: "USD" };
+ return this.toLocaleString("en-US", options);
 }
 

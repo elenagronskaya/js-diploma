@@ -5,12 +5,11 @@ import "./form.scss";
 
 const template = `
 <div class="switchBtn">
-<button id="btnSignUp" disabled="disabled">Sign Up</button>
-<button id="btnLogIn" >Log In</button>
+<div id="btnSignUp" disabled="disabled">Sign Up</div>
+<div id="btnLogIn" >Log In</div>
 </div>
 <div class="Form">
 <div class="signUp_container active" id="signUpForm">
-    <h1>Sign Up, Please!</h1>
     <form name="register" id="registerForm">
         <input name="login" id="loginInput" placeholder="login">
         <input name="name" id="nameInput" placeholder="name">
@@ -21,7 +20,6 @@ const template = `
     </form>
 </div>
 <div class="login_container " id="logInForm">
-    <h1>Sign In</h1>
     <form id="loginForm">
         <div class="inputEmail">
             <input id="email" placeholder="email">

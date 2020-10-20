@@ -22,7 +22,7 @@ function getUserColumnTemplate(user)
         <div class="column-names__company">${user.company}</div>
         <div class="column-names__email">${user.email}</div>
         <div class="column-names__phone">${user.phone}</div>
-        <div class="column-names__balance">${user.balance}$</div>
+        <div class="column-names__balance">${user.balance}</div>
     </div>`; 
     return template;
 }

@@ -2,47 +2,38 @@ import {ROOT_NODE} from '../constants';
 import "./calendar.scss"
 
 const template = `<div class="calendarContainer">
-<div class="currentDate">Today:</div>
+<div class="currentDate">Today:<span id="currentDate">${new Date().toDateString()}</span></div>
 <div class="weekContainer">
-    <div class="day">Пн</div>
-    <div class="day">Вт</div>
-    <div class="day">Ср</div>
-    <div class="day">Чт</div>
-    <div class="day">Пт</div>
-    <div class="day">Сб</div>
-    <div class="day">Вс</div>
+    <div class="day">Sun</div>
+    <div class="day">Mon</div>
+    <div class="day">Tue</div>
+    <div class="day">Wed</div>
+    <div class="day">Thu</div>
+    <div class="day">Fri</div>
+    <div class="day">Sat</div>
 </div>
 <div class="daysContainer">
-</div></div>`;
 
-// <div class="days">
-    // <div class="empty"></div>
-    // <div class="empty"></div>
-    // <div class="empty"></div>
-    // <div class="day">1</div>
-    // <div class="day current">2</div>
-    // <div class="day">3</div>
-    // <div class="day">4</div>
-// </div>
-    //`;
+</div>
+</div>`;
 
-    //const templateEndTags = `</div></div>`;
+
 export function renderCalendar(){
     const today = new Date()
     const month = today.getMonth();
     const year = today.getFullYear();
-
+    const day = today.getDate();
     let startOfMonth = new Date (year, month).getDay();
-    let numOfDays = 32 - new Date(year,month, 32).getDate();
+    let numOfDays = 33 - new Date(year,month, 33).getDate();
     let renderNum = 1;
 
-    let parser  = new DOMParser(template);
+    let parser  = new DOMParser();
     
     let calendar = parser.parseFromString(template, 'text/html');
 
     let daysContainerElements = calendar.getElementsByClassName("daysContainer")
     let daysContainerElement =  daysContainerElements[0]
-    for(let i=0; i<6; i++){
+    for(let rowIndex = 0; rowIndex < 6; rowIndex++){
         if (renderNum >numOfDays)
         {
             break;
@@ -51,8 +42,8 @@ export function renderCalendar(){
         let row = document.createElement("div");
         daysContainerElement.append(row);
         row.classList.add("days");
-        for(let c=0; c<7; c++){
-            if(i===0 && c<startOfMonth){
+        for(let column = 0; column < 7; column++){
+            if(rowIndex===0 && column < startOfMonth){
                 let div = document.createElement("div");
                 div.classList.add("empty");
                 row.append(div);
@@ -62,6 +53,10 @@ export function renderCalendar(){
                 row.append(div);
             }else{
                 let div = document.createElement("div");
+                if(day === renderNum){
+                    div.classList.add("current")
+                } 
+
                 div.innerHTML = renderNum;
                 row.append(div);
                 renderNum++
