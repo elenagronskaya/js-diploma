@@ -1,4 +1,5 @@
 import * as Constants from "../constants";
+import {initMenu} from "../menu"
 
 export function initLogin() {
 
@@ -50,8 +51,8 @@ btnLogin.addEventListener("click",function(event){
         localStorage.setItem(Constants.USER_KEY, JSON.stringify({email: user.email, name: user.name}));
         inputEmail.value = "";
         inputPassword.value = "";
+        initMenu();
         window.location.hash = Constants.ROUTE_MAIN;
-
     }else{
         spanError.classList.add("error");
         spanError.innerText = getErrorMessage(inputEmail.value);

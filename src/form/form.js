@@ -1,6 +1,6 @@
 import {initLogin} from "./login";
 import {initRegistration} from "./register";
-import {ROOT_NODE} from "../constants";
+import {ROOT_NODE, USER_KEY} from "../constants";
 import "./form.scss";
 
 const template = `
@@ -36,6 +36,10 @@ const template = `
 </div>
 </div>`
 
+export function signOut()
+{
+    localStorage.removeItem(USER_KEY);
+}
 export function initForm(){
     ROOT_NODE.innerHTML = template;
     const {loginForm} = initLogin();

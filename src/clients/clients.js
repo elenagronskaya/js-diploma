@@ -3,7 +3,6 @@ import "./clients.scss";
 import {createUsersTab} from "./createClientsTab";
 
 
-
 const template = `
 <div class="quantity">
         <div class="genderContainer">
@@ -30,15 +29,23 @@ const template = `
             <div class="balance">Balance</div>
         </div>
 </div>`
-
   
 
-    export function initClients(){
-        ROOT_NODE.innerHTML = template;
-        fetch("https://raw.githubusercontent.com/elenagronskaya/js-diploma/master/db.json")
-            .then((response)=>{
-                return response.json();
-            })
-            .then((users)=>{createUsersTab(users)
-            })
-    }
+export const initClients = async () =>{
+    ROOT_NODE.innerHTML = template;
+    try {
+        const response = await fetch("https://raw.githubusercontent.com/elenagronskaya/js-diploma/master/db.json");
+        const users = await response.json();
+        createUsersTab(users);
+    }catch(error){}   
+}
+
+// export function initClients(){
+//     ROOT_NODE.innerHTML = template;
+//     fetch("https://raw.githubusercontent.com/elenagronskaya/js-diploma/master/db.json")
+//     .then((response)=>{
+//         return response.json();
+//     })
+//     .then((users)=>{createUsersTab(users)
+//     })
+// }

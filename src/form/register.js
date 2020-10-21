@@ -1,6 +1,6 @@
 import * as Constants from "../constants";
+import {initMenu} from "../menu"
 
-//initLogin();
 export function initRegistration(){
     const btn = document.getElementById("btnRegister");
     const regForm = document.getElementById("signUpForm");
@@ -28,14 +28,7 @@ export function initRegistration(){
                 this.name.valid = this.name.value !==""
             }
         },
-        // age: {
-        //     value: "",
-        //     valid: false,
-        //     checkValidation(){
-        //         const regex = /^\d+$/
-        //         this.age.valid = regex.test(this.age.value);
-        //     }
-        // },
+   
         email: {
             value: "",
             valid: false,
@@ -44,13 +37,6 @@ export function initRegistration(){
                 this.email.valid = regex.test(this.email.value) && !_isEmailExist(this.email.value);   
             }
         },
-        // city: {
-        //     value: "",
-        //     valid: false,
-        //     checkValidation(){
-        //         this.city.valid = this.city.value !==""
-        //     }
-        // },
         password: {
             value: "",
             valid: false,
@@ -78,9 +64,7 @@ export function initRegistration(){
             return {
                 login: this.login.value,
                 name: this.name.value,
-                // age: this.age.value,
                 email: this.email.value,
-                // city: this.city.value,
                 password: this.password.value,    
             }
         }
@@ -109,6 +93,7 @@ export function initRegistration(){
         const cred = formHelper.getValue();
         Constants.users.push(cred);
         localStorage.setItem(Constants.USER_KEY, JSON.stringify({email: cred.email, name: cred.name}));
+        initMenu();
         window.location.hash = Constants.ROUTE_MAIN;
     });
 

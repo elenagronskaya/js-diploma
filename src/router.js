@@ -1,8 +1,9 @@
 import { initClients } from "./clients/clients"
 import * as Constants from "./constants";
-import { initForm } from "./form/form";
+import { initForm, signOut } from "./form/form";
 import{ getBrowser, welcomInscription } from "./mainpage/mainpage"
 import {renderCalendar} from "./calendar/calendar"
+import {initMenu} from "./menu"
 
 
 function router(){
@@ -14,7 +15,15 @@ function router(){
             loginProtector(welcomInscription);
         } else  if (window.location.hash === Constants.ROUTE_CALENDAR){
             loginProtector(renderCalendar);
-        }else{
+        }
+        else if (window.location.hash === Constants.ROUTE_SIGNOUT)
+        {
+            signOut();
+            initMenu();
+            window.location.hash = Constants.ROUTE_FORM
+            
+        }
+        else{
             Constants.ROOT_NODE.innerHTML = `<div>Page is not found</div>`
         }  
     };

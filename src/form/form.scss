@@ -45,11 +45,7 @@
 .signUp_container.active,.login_container.active{
      display: block !important;
 }
-// .active{
-//     background-color: lightblue;
-// }
 #loginForm{
-    /* padding: 50px; */
     justify-content: center;
     text-align: center;
 }
@@ -58,7 +54,6 @@
     margin-bottom: 20px;
 }
 #email{
-    // border-radius: 10px;
     width: 250px;
     height: 30px;
     padding-left: 10px;
@@ -70,14 +65,12 @@
 #password {
     width: 250px;
     height: 30px;
-    // border-radius: 10px;
     padding-left: 10px;
 }
 #btnLogin{
     width: 100px;
     background-color: blue;
     color: white;
-    // border-radius: 10px;
     margin-bottom: 10px;
     border: 0;
     height: 25px;
@@ -87,12 +80,6 @@
 }
 input.invalid{
     border: solid 2px red;
-}
-h1{
-    // display: flex;
-    // justify-content: center;
-    // color:blueviolet;
-    // font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 .error.errorMessage{
     display: block;
@@ -119,7 +106,6 @@ body{
 form input{
     width: 250px;
     height: 30px;
-    // border-radius: 5px;
     border: 1px solid gray;
 }
 input {
@@ -135,7 +121,6 @@ form#registerForm input.invalid{
     width: 250px;
     background-color: blueviolet;
     color: white;
-    // border-radius: 5px;
     margin-bottom: 10px;
     height: 30px;
     padding: 0;

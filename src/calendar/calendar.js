@@ -24,7 +24,8 @@ export function renderCalendar(){
     const year = today.getFullYear();
     const day = today.getDate();
     let startOfMonth = new Date (year, month).getDay();
-    let numOfDays = 33 - new Date(year,month, 33).getDate();
+    //let numOfDays = 33 - new Date(year,month, 33).getDate();
+    let numOfDays = new Date(year, month+1, 0).getDate();
     let renderNum = 1;
 
     let parser  = new DOMParser();
